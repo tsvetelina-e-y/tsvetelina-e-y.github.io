@@ -1,0 +1,1199 @@
+:root {
+    --color-dark: #17252A;
+    --color-green-dark: #2B7A78;
+    --color-green-light: #3AAFA9;
+    --color-grey: #DEF2F1;
+    --color-light: #FEFFFF;
+    --color-dark-transparent: rgb(23, 37, 42, .7);
+    --color-light-transparent: rgba(254, 255, 255, .1);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 100%;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.5em;
+}
+
+body {
+    background: var(--color-dark);
+    overflow-x: hidden;
+}
+
+.text-paragraph-3 {
+    font-size: 1.2rem;
+    line-height: 1.6em;
+    margin-bottom: 2em;
+}
+
+
+.text-paragraph-3 {
+    font-size: 1rem;
+    line-height: 1.6em;
+    margin-bottom: 2em;
+}
+
+.mb-10 {
+    margin-bottom: 10rem;
+}
+
+.mb-16 {
+    margin-bottom: 16rem;;
+}
+
+.glow {
+    position: relative;
+}
+
+.card-shadow {
+    padding: 30px 20px;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+    flex: 1;
+    margin: 10px;
+}
+
+.glow:after {
+    z-index: 10;
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    -webkit-filter: blur(30px);
+    -moz-filter: blur(30px);
+    -ms-filter: blur(30px);
+    background: linear-gradient(to right, var(--color-green-light), var(--color-green-dark) );
+    filter: blur(30px);
+    background-size: 100% 100%;
+    transform: scale(1.03);
+}
+
+.section-title {
+    font-weight: bold;
+    color: var(--color-dark);
+    font-size: 42px;
+    margin-bottom: .4em;
+    position: relative;
+    padding-left: 20px;
+    z-index: 20;
+}
+
+.section-title:after {
+    height: 80%;
+    position: absolute;
+    content: '';
+    background: var(--color-green-light);
+    width: 120%;
+    left: -10%;
+    bottom: 10%;
+    z-index: -5;
+}
+
+.section-title.inverse {
+    color: var(--color-green-light);
+}
+
+.section-title.inverse:after {
+    background: var(--color-light);
+}
+
+.background-vertical {
+    position: absolute;
+    height: 100%;
+    width: 95%;
+    background: var(--color-light);
+    right: 0px;
+}
+
+
+video {
+    /* position: fixed; */
+    /* min-width: 100vh;
+    top: 0;
+    left: 0;
+    -webkit-filter: blur(0px) saturate(1) invert(0);
+    z-index: 5; */
+}
+
+.video-background {
+    position: fixed;
+    z-index: -1;
+}
+
+.video-background video {
+    height: 100vh;
+}
+
+.bullet-point {
+    display: inline-block;
+    position: relative;
+    width: 45px;
+    height: 10px;
+    overflow-x: visible;
+    /* border-right: 6px solid var(--color-dark); */
+    border-bottom: 10px solid var(--color-green-light);
+    z-index: 15;
+    margin-right: 15px;
+    margin-left: -35px;
+}
+
+.bullet-point.small {
+    width: 25px;
+    height: 6px;
+}
+
+.bullet-point.dark-green {
+    border-color: var(--color-green-dark);
+}
+
+.bullet-point.red {
+    border-color: rgb(211, 108, 108);
+}
+
+.bullet-point.green {
+    border-color: rgb(178, 233, 95);
+}
+
+.bold-word {
+    color: var(--color-green-dark);
+    font-weight: bold;
+}
+
+/* .bullet-point:before {
+    position: absolute;
+    content: '';
+    width: 120%;
+    height: 120%;
+    background: var(--color-green-light);
+    left: 10%;
+    z-index: -1;
+    border-right: 6px solid var(--color-green-light);
+    border-bottom: 10px solid var(--color-green-light);
+    transform: rotate(-8deg);
+} */
+
+/* START PAGE LAYOUT */
+
+.page-container {
+    display: flex;
+}
+
+.page-content {
+    margin-left: 100px;
+}
+
+/* END PAGE LAYOUT */
+
+/* START MENU */
+
+.side-menu {
+    position: relative;
+    height: 100vh;
+    color: var(--color-green-light);
+    z-index: 200;
+    transition: .35s all ease-in-out;
+    flex-basis: 100px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    position: fixed;
+    width: 100px;
+    overflow-y: scroll;
+    z-index: 9999;
+    -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;
+}
+
+.side-menu::-webkit-scrollbar {
+    display: none;
+}
+
+.side-menu:hover {
+    flex-basis: 300px;
+    width: 300px;
+}
+
+.side-menu video {
+    z-index: -5;
+    position: relative;
+    height: 120vh;
+    position: absolute;
+}
+
+.side-menu ul {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    height: 100%;
+    width: 100%;
+}
+
+.side-menu ul li {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 20px 10px;
+    cursor: pointer;
+    transition: .35s all ease-in-out;
+    position: relative;
+    min-height: 110px;
+    border-bottom: 1px solid var(--color-light-transparent);
+}
+
+.side-menu ul li:hover {
+    background: var(--color-green-light);
+    color: var(--color-dark);
+}
+
+.side-menu ul li:hover a {
+    color: var(--color-dark);
+}
+
+.side-menu ul a {
+    text-decoration: none;
+    color: var(--color-green-light);
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    width: 300px;
+    padding-left: 100px;
+    height: 70px;
+}
+
+.side-menu .menu-label{
+    font-weight: bold;
+    font-size: 40px;
+    width: 100px;
+    height: 100%;
+    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 12px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* END MENU */
+
+.home-section {
+    height: 100vh;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding: 0px 25px;
+    background: var(--color-dark);
+    position: relative;
+}
+
+.home-section:after {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 3000px;
+    background: var(--color-light-transparent);
+    bottom: 0px;
+    transform: rotate(45deg);
+}
+
+.home-section .content-wrapper {
+    /* height: 60%; */
+    position: relative;
+    z-index: 5;
+}
+
+
+.home-section .title-1 {
+    margin-left: -20px;
+}
+
+.home-section .title-3,
+.home-section .title-5 {
+    margin-left: 25px;
+}
+
+.home-section .title-1,
+.home-section .title-3,
+.home-section .title-5 {
+    color: var(--color-green-light);
+    font-size: 42px;
+    font-weight: 300;
+    font-size: 18px;
+    color: var(--color-dark);
+    font-weight: 400;
+    position: relative;
+    z-index: 10;
+    display: block;
+    text-align: center;
+    width: 40%;
+    font-style: italic;
+}
+
+.home-section .title-1:after,
+.home-section .title-3:after,
+.home-section .title-5:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background: var(--color-green-light);
+    z-index: -5;
+}
+
+.home-section .title-2,
+.home-section .title-4 {
+    font-size: 42px;
+    font-weight: bold;
+    background: var(--color-dark);
+    color: var(--color-green-light);
+    padding: 15px 30px;
+    margin-bottom: 25px;
+}
+
+.home-section .title-4 {
+    font-size: 28px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.home-section .title-6 {
+    font-size: 32px;
+    font-weight: 300;
+    background: var(--color-dark);
+    color: var(--color-green-light);
+    padding: 15px 25px 10px 5px;
+    width: 100%;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    margin-left: 50px;
+}
+
+.home-section .title-6 {
+    text-transform: capitalize;
+    text-align: center;
+    font-size: 20px;
+}
+
+.home-section .title-2 {
+    margin-bottom: 45px;
+}
+
+.home-section .title-4 {
+    margin-bottom: 45px;
+}
+/* 
+.home-section .title-3,
+.home-section .title-5 {
+    font-weight: 300;
+    color: var(--color-dark);
+    font-size: 16px;
+} */
+
+/* START HOME */
+
+/* END HOME */
+
+.row {
+    display: flex;
+}
+
+.column-1 {
+    flex: 1;
+}
+
+.hover-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.hover-card .overlay-content {
+    position: absolute;
+    z-index: 200;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 20%;
+    background: var(--color-dark-transparent);
+    background: rgba(1, 1, 1, .8);
+    transform: translateY(100%);
+    padding: 10px;
+    transition: .35s all ease-in-out;
+    color: var(--color-green-light);
+}
+
+.hover-card:hover .overlay-content {
+    transform: translateY(0px);
+}
+
+/* INTEL FIRST PROCESSORS */
+
+
+.intel-first-models {
+    background: white;
+    padding: 50px 30px;
+}
+
+.intel-first-models .row {
+    display: flex;
+}
+
+.intel-first-models .overlay-content {
+    transform: translateY(0px) !important;
+    font-weight: 600;
+    color: var(--color-green-light);
+}
+
+.intel-first-models .card-2 {
+    display: flex;
+}
+
+.intel-first-models img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.intel-first-models .text-section {
+    width: 100%;
+}
+
+.intel-first-models .text-section:last-child {
+    padding: 60px 60px;
+}
+
+.intel-first-models .text-section p {
+    margin-bottom: 40px;
+}
+/* END INTEL FIRST PROCESSORS */
+
+/* START INTEL CORE 9 */
+
+.intel-core-9-section {
+    background: white;
+    padding: 45px;
+}
+
+.intel-core-9-section img {
+    width: 100%;
+}
+
+.intel-core-9-section .row .col {
+    flex: 1;
+}
+
+.intel-core-9-section .hover-card {
+    margin-bottom: 10px;
+    color: var(--color-green-light);
+}
+
+.intel-core-9-section .row .content {
+    flex: 4;
+}
+
+.intel-core-9-section .content {
+    padding: 0px 45px;
+}
+
+.intel-core-9-section .content p{
+    margin-bottom: 30px;
+}
+
+/* END INTEL CORE 9 */
+
+/* MANUFACTURE SECTION */
+
+.manufactures-section {
+    width: 100%;
+    color: var(--color-dark);
+    padding: 50px 0px;
+}
+
+.manufactures-section .section-title:after {
+    display: none;
+}
+
+.manufactures-section .description-text-wrapper {
+    padding: 2% 4%;
+    border-radius: 0px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding-left: 10%;
+    background: var(--color-light);
+}
+
+.manufactures-section .text-paragraph-3 {
+    /* box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12); */
+    border-radius: 3px;
+    padding: 20px 10px;
+}
+
+.manufactures-section .images {
+    display: flex;
+    overflow: visible;
+    position: relative;
+    /* background: var(--color-dark); */
+}
+
+.manufactures-section .images:after {
+    position: absolute;
+    content: '';
+    background: var(--color-green-light);
+    height: 170%;
+    width: 100%;
+    top: -50%;
+    clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+}
+
+.manufactures-section .images .img-wrap {
+    width: 100%;
+    padding: 10px;
+    position: relative;
+    overflow: visible;
+}
+
+.manufactures-section .images .img-wrap:after {
+    content:'';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 70%;
+    content: '';
+    display: block;
+    position: absolute;
+    width: 90%;
+    height: 60%;
+    bottom: -0.1%;
+    left: -0.1%;
+    /* border: 2px solid var(--color-dark); */
+    z-index: 5;
+    /* background: var(--color-dark); */
+    border-radius: 2px;
+    /* -webkit-filter: blur(30px);
+    -moz-filter: blur(30px);
+    -ms-filter: blur(30px);
+    background: linear-gradient(to right, var(--color-green-light), var(--color-green-dark) );
+    filter: blur(30px);
+    background-size: 200% 200%;
+    transform: scale(1.1); */
+}
+
+
+.manufactures-section .images img {
+    width: 100%;
+    position: relative;
+    z-index: 15;
+    border-radius: 3px;
+}
+
+.manufactures-section .images img:after {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: -5px;
+    left: -5px;
+    border: 1px solid var(--color-dark);
+
+}
+
+.manufactures-section .section-title{
+    width: 60%;
+}
+
+.manufactures-section .manufactures-list .text-paragraph-3 {
+    width: 60%;
+}
+
+.manufactures-line {
+    display: flex;
+}
+
+.manufactures-line .paragraph-card {
+    padding: 30px 20px;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+}
+
+.manufactures-line .paragraph-card-wrap {
+    padding: 10px;
+    flex: 1;
+    display: flex;
+}
+
+
+/* HISTORY SECTION */
+
+.history-section {
+    background: var(--color-dark);
+    position: relative;
+    width: 100%;
+}
+
+.history-intel-container {
+    position: relative;
+}
+
+.history-intel-container .video-container {
+    position: absolute;
+    height: 50%;
+    width: 60%;
+    right: 0;
+    top: -15%;
+    z-index: 0;
+}
+
+.history-section .section-title {
+    color: var(--color-green-light);
+}
+
+.history-section .section-title:after {
+    background: transparent;
+}
+
+.history-intel-container .video-container:after {
+    position: absolute;
+    top: 5%;
+    left: 0;
+    width: 60%;
+    height: 50%;
+    content: '';
+    /* -webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
+    -ms-filter: blur(10px);
+    background: linear-gradient(to right, var(--color-green-light), var(--color-green-dark) );
+    filter: blur(30px);
+    /* background-size: 200% 200%; 
+    transform: scale(1.1); */
+}
+
+#intelVideo {
+    width: 120%;
+    min-width: 100%;
+    position: absolute;
+    display: block;
+    z-index: 120;
+    border-radius: 4px;
+}
+
+.history-intel-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+.history-intel-container .text-container {
+    z-index: 25;
+    position: relative;
+    padding: 35px 10px;
+    color: var(--color-dark);
+    width: 50%;
+    margin-left: 5%;
+    /* height: 100%; */
+    display: flex;
+    flex-direction: column;
+    border-radius: 3px;
+    background: white;
+}
+
+.history-intel-container .text-paragraph-3 {
+    padding: 4% 3%;
+    position: relative;
+    z-index: 25;
+}
+.history-intel-container .text-container {
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+.history-intel-container .mur-img {
+    bottom: 0%;
+    z-index: 20;
+}
+
+.history-intel-container .mur-img,
+.history-intel-container .robert-img {
+    position: absolute;
+    width: 35vw;
+    
+}
+
+.history-intel-container .mur-img img,
+.history-intel-container .robert-img img {
+    width: 100%;
+}
+
+.history-intel-container .robert-img {
+    position: absolute;
+    right: 0px;
+    top: 20vw;
+}
+
+.history-intel-container .mur-img {
+    position: absolute;
+    right: 8%;
+    top: 45vw;
+    z-index: 40;
+}
+
+.history-intel-container .text-paragraph-3:after {
+    /* position: absolute;
+    content: '';
+    display: block;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; */
+}
+
+/* START AMD HISTORY SECTION */
+
+
+.history-mad-container {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.history-mad-container .video-container {
+    position: absolute;
+    width: 70%;
+    height: 60%;
+    left: 3%;
+    top: 10%;
+}
+
+video {
+    border-radius: 10px;
+}
+
+.history-mad-container .video-container .glow {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.history-mad-container .video-container .glow video {
+    position: relative;
+    width: 100%;
+    border-radius: 5px;
+}
+
+#madVideo {
+    z-index: 120;
+}
+
+.history-mad-container .glow:after {
+    background: linear-gradient(to right, rgb(255, 0, .5), rgb(255, 0, .1));
+    opacity: .5;
+}
+
+.history-mad-container video{
+    border-radius: 4px;
+}
+
+
+.history-mad-container .text-container {
+    position: relative;
+    z-index: 130;
+    width: 50%;
+    margin-right: 5%;
+}
+
+.history-mad-container .text-content {
+    background: var(--color-light);
+    width: 100%;
+    height: 100%;
+    padding: 30px 20px;
+    border-radius: 2px;
+    position: relative;
+    z-index: 150;
+    margin-right: 20px;
+}
+
+.history-mad-container .bullet-point::before {
+    /* border-color: red; */
+}
+
+.history-mad-container .text-paragraph-3 {
+    padding-bottom: 15px;
+}
+
+/* END AMD SECTION */
+
+/* START NVIDIA SECTION */
+
+.history-nvidia-container {
+    position: relative;
+    min-height: 100vh;
+
+}
+
+.history-nvidia-container .text-container {
+    background: white;
+    position: relative;
+    z-index: 130;
+    width: 50%;
+    margin-right: 5%;
+    margin-top: 5%;
+    margin-left: 5%;
+    padding: 45px 20px;
+}
+
+.history-nvidia-container .video-container {
+    width: 80%;
+    height: 60%;
+    position: absolute;
+    right: 0%;
+    top: 7%;
+}
+
+/* .history-nvidia-container .video-container .glow {
+    width: 100%;
+    height: 100%;
+    position: relative;
+} */
+
+/* .history-nvidia-container .video-container .glow:after {
+    background: linear-gradient(ro right, );
+} */
+
+.history-nvidia-container .video-container video {
+    width: 100%;
+    height: 100%;
+    z-index: 15;
+    position: relative;
+}
+
+/* END NVIDIA SECTION */
+
+/* END HISTORY SECTION */
+
+.text-underline {
+    text-decoration: underline;
+    text-decoration-color: red;
+    text-underline-position: under;
+    text-decoration-style: solid;
+}
+
+/* START INTEL MODELS SECTION */
+
+.intel-models-section {
+    position: relative;
+    min-height: 100vh;
+    background: var(--color-light);
+    margin-bottom: 50px;
+}
+
+.intel-models-section .cards-row {
+    display: flex;
+    min-height: 140px;
+}
+
+.intel-models-section .card-wrapper {
+    flex: 1;
+    padding: 0px 25px;
+    display: flex;
+}
+
+.intel-models-section .card-wrapper.core-i3 .img-container{
+    background-image: url(./images/core-i3.jpg);
+}
+
+.intel-models-section .card-wrapper.core-i5 .img-container{
+    background-image: url(./images/core-5.jpg);
+}
+
+.intel-models-section .card-wrapper.core-i7 .img-container{
+    background-image: url(./images/core-i7.jpg);
+}
+
+.intel-models-section .card .img-container{
+    height: 130px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: var(--color-grey);
+}
+
+/* END INTEL MODEL SECTION */
+
+.card {
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.5em;
+
+}
+
+.card .card-title{
+    font-size: 24px;
+    background: var(--color-dark);
+    color: var(--color-green-light);
+    padding: 15px 10px;
+    position: relative;
+    /* overflow: hidden; */
+}
+
+.card .card-title::after {
+    position: absolute;
+    display: block;
+    left: 30%;
+    top: -70%;
+    width: 100%;
+    height: 300%;
+    content: '';
+    transform: rotate(-45deg);
+    background: rgba(255, 255, 255, .1);
+    z-index: 40;
+}
+
+.card .card-description-content {
+    padding: 30px 15px;
+}
+
+.card ul {
+    list-style: none;
+}
+
+.card p {
+    margin-bottom: 15px;
+    font-weight: bold;
+    line-height: 1.4em;
+    color: var(--color-green-dark);
+    font-size: 14px;
+}
+
+.card ul li {
+    font-size: 16px;
+}
+
+/* comparison table styles */
+
+.comparison-table-section {
+    min-height: 100vh;
+    width: 100%;
+    padding: 45px 30px;
+}
+
+.comparison-table-section table{
+    font-size: 18px;
+    color: var(--color-green-light);
+}
+
+.comparison-table-section table td,
+.comparison-table-section table th{
+    padding: 1.2em;
+    border: 1px solid var(--color-light-transparent);
+}
+
+.comparison-table-section table th {
+    background: var(--color-light);
+}
+
+.comparison-table-section table td:first-child {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+
+/* comparison table styles */
+
+/* amd ryzen threadripper */
+
+.top-amd-processors {
+    color: var(--color-green-light);
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.5em;
+}
+
+.top-amd-processors .section-title {
+    width: 100%;
+    margin: 0;
+    overflow: visible;
+    z-index: 10 ;
+
+    /* color: black; */
+}
+
+.top-amd-processors .section-title:after {
+    background: var(--color-green-light);
+    left: 0;
+    top: -7%;
+    bottom: 0;
+    height: 200%;
+}
+
+.top-amd-processors ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    align-content: center;
+    justify-content: center;
+}
+
+.top-amd-processors img {
+    width: 100%;
+}
+
+.top-amd-processors .content-wrapper {
+}
+
+.top-amd-processors ul {
+    padding: 30px 20px;
+    width: 100%;
+    flex: 1;
+}
+
+.top-amd-processors ul li {
+    margin-bottom: 15px;
+}
+
+.top-amd-processors ul .bullet-point {
+    margin: 0px;
+    margin-right: 15px;
+}
+
+.top-amd-processors .video-container {
+    width: 100%;
+}
+
+.top-amd-processors .video-container video {
+    width: 100%;
+    border-radius: 0px;
+}
+
+
+/* amd ryzen threadripper */
+
+.col-2 {
+    display: flex;
+    justify-content: flex-start;
+}
+
+
+/* NVIDIA PROCESSORS */
+
+.nvidia-processors-section {
+    min-height: 100vh;
+    padding: 45px 25px;
+
+}
+
+.nvidia-processors-section .g-force-super {
+   width: 100%;
+   min-height: 100vh;
+}
+
+.g-force-super-description {
+    min-height: 100vh;;
+    background: var(--color-dark);
+    color: var(--color-green-light);
+    max-width: 85vw;
+    margin: 30px auto;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.g-force-super-description:after {
+    position: absolute;
+    width: 200vw;
+    height: 300px;
+    background: var(--color-green-dark);
+    content: '';
+    display: block;
+    top: 0;
+    right: 0%;
+    transform: rotate(45deg);
+}
+
+.g-force-super-description .card-shadow {
+    background: var(--color-dark);
+    position: relative;
+    z-index: 200;
+}
+
+.nvidia-processors-section .g-force-super video {
+    width: 100%;
+    border-radius: 0px;
+}
+
+.nvidia-processors-section .nvidia-desc-1 {
+    background: url('./images/nvidia_wallpaper.jpg');
+    background-size: auto;
+    background-position: right;
+    background-repeat: no-repeat;
+    color: var(--color-green-light);
+    width: 100%;
+}
+
+.nvidia-processors-section .nvidia-desc-1 .card-shadow {
+    background: var(--color-dark);
+}
+
+.nvidia-processors-section .nvidia-desc-1 .content {
+    min-height: 70vh;
+    max-width: 50vw;
+    color: var(--color-green-light);
+    text-align: center;
+    margin: 0 auto;
+}
+
+.nvidia-processors-section .nvidia-desc-1 h5{
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.nvidia-tegra {
+    min-height: 100vh;
+    color: var(--color-green-light);
+}
+
+/* NVIDIA PROCESSORS */
+
+/* START AMD RYZON-SERIES */
+
+.amd-ryzon-series {
+    color: var(--color-green-light);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.amd-ryzon-series .content {
+    padding: 0px 45px;
+}
+
+.amd-ryzon-series .section-title {
+    justify-self: flex-start;
+    align-self: flex-start;
+    text-transform: uppercase;
+}
+
+.amd-ryzon-series .content ul{
+    padding: 0px 45px;
+    list-style: none;
+    font-weight: 300;
+}
+
+.amd-ryzon-series .content ul li {
+    margin-bottom: 15px;
+}
+
+
+/* END AMD RYZON-SERIES */

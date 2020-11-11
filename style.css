@@ -22,6 +22,11 @@ body {
     overflow-x: hidden;
 }
 
+.table-container {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
 .text-paragraph-3 {
     font-size: 1.2rem;
     line-height: 1.6em;
